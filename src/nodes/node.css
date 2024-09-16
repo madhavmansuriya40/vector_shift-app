@@ -1,0 +1,79 @@
+/* a common CSS file for all nodes, as all the nodes should look same */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+}
+
+.node {
+  min-width: 200px;
+  max-width: 350px;
+  min-height: 80px;
+  max-height: fit-content;
+  padding: 1vw;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #381b59;
+  border-radius: 10px; /* Rounded corners */
+  filter: blur(0.2px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  animation: glow 1.5s infinite;
+}
+
+.react-flow__edge.react-flow__edge-smoothstep.nopan.animated {
+  fill: var(--primary-color);
+  animation: glow 1.5s infinite;
+}
+
+.node-title {
+  text-align: center;
+  font-size: 2vh;
+}
+
+.node-content {
+  margin: 2vh 0;
+  font-size: 1.4vh;
+  text-align: center;
+}
+
+label {
+  font-size: 1.2vh;
+  letter-spacing: 1px;
+  padding-right: 1vw;
+  margin-bottom: 1vw;
+}
+
+input {
+  font-size: 1.2vh;
+  width: 8vw;
+  border: 0;
+  color: var(--ternary-color);
+  border-bottom: 1px solid var(--primary-color);
+  background: transparent;
+  margin-left: 1vw;
+  margin-bottom: 1vw;
+}
+
+select {
+  background-color: transparent;
+  width: 8vw;
+  font-size: 1.2vh;
+  margin-left: 1vw;
+  border: 0;
+  color: var(--ternary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
