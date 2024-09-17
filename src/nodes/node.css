@@ -1,78 +1,71 @@
-/* a common CSS file for all nodes, as all the nodes should look same */
-
+/* Keyframes for glow animation */
 @keyframes glow {
-  0% {
-    box-shadow: 0 0 5px var(--primary-color);
+  0%,
+  100% {
+    box-shadow: 0 0 0.5rem var(--primary-color); /* 5px */
   }
   50% {
-    box-shadow: 0 0 10px var(--primary-color);
-  }
-  100% {
-    box-shadow: 0 0 5px var(--primary-color);
+    box-shadow: 0 0 1rem var(--primary-color); /* 10px */
   }
 }
 
+/* Common styles for all nodes */
 .node {
-  min-width: 200px;
-  max-width: 350px;
-  min-height: 80px;
+  min-width: 12.5rem; /* 200px */
+  max-width: 21.875rem; /* 350px */
+  min-height: 5rem; /* 80px */
   max-height: fit-content;
-  padding: 1vw;
+  padding: 1rem; /* Approximation for 1vw */
   color: white;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #381b59;
-  border-radius: 10px; /* Rounded corners */
-  filter: blur(0.2px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0.625rem; /* 10px */
+  filter: blur(0.0125rem); /* Approximation for 0.2px */
+  box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.2); /* 15px */
   animation: glow 1.5s infinite;
 }
 
-.react-flow__edge.react-flow__edge-smoothstep.nopan.animated {
-  fill: var(--primary-color);
-  animation: glow 1.5s infinite;
-}
-
+/* Node title styles */
 .node-title {
   text-align: center;
-  font-size: 2vh;
+  font-size: 1.25rem; /* Approximation for 2vh */
 }
 
+/* Node content styles */
 .node-content {
-  margin: 2vh 0;
-  font-size: 1.4vh;
+  margin: 1.25rem 0; /* Approximation for 2vh */
+  font-size: 1.05rem; /* Approximation for 1.4vh */
   text-align: center;
 }
 
+/* Label styles */
 label {
-  font-size: 1.2vh;
-  letter-spacing: 1px;
-  padding-right: 1vw;
-  margin-bottom: 1vw;
+  font-size: 0.75rem; /* Approximation for 1.2vh */
+  letter-spacing: 0.01em;
+  padding-right: 1rem; /* Approximation for 1vw */
+  margin-bottom: 1rem; /* Approximation for 1vw */
 }
 
-input {
-  font-size: 1.2vh;
-  width: 8vw;
-  max-width: 15vw;
-  overflow: scroll;
-  border: 0;
-  color: var(--ternary-color);
-  border-bottom: 1px solid var(--primary-color);
-  background: transparent;
-  margin-left: 1vw;
-  margin-bottom: 1vw;
-}
-
+/* Input and select styles */
+input,
 select {
-  background-color: transparent;
-  width: 8vw;
-  font-size: 1.2vh;
-  margin-left: 1vw;
+  font-size: 0.75rem; /* Approximation for 1.2vh */
+  width: 8rem; /* Approximation for 8vw */
+  max-width: 15rem; /* Approximation for 15vw */
   border: 0;
   color: var(--ternary-color);
-  border-bottom: 1px solid var(--primary-color);
+  border-bottom: 0.0625rem solid var(--primary-color); /* Approximation for 1px */
+  background: transparent;
+  margin-left: 1rem; /* Approximation for 1vw */
+  margin-bottom: 1rem; /* Approximation for 1vw */
 }
 
+/* Input specific styles */
+input {
+  overflow: auto; /* Changed from scroll to auto */
+}
+
+/* Focus styles for form elements */
 input:focus,
 textarea:focus,
 button:focus,

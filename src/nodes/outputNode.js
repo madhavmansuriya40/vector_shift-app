@@ -10,13 +10,8 @@ export const OutputNode = ({ id, data }) => {
   );
   const [outputType, setOutputType] = useState(data.outputType || "Text");
 
-  const handleNameChange = (e) => {
-    setCurrName(e.target.value);
-  };
-
-  const handleTypeChange = (e) => {
-    setOutputType(e.target.value);
-  };
+  const handleNameChange = (e) => setCurrName(e.target.value);
+  const handleTypeChange = (e) => setOutputType(e.target.value);
 
   const content = (
     <>
@@ -39,14 +34,12 @@ export const OutputNode = ({ id, data }) => {
   );
 
   return (
-    <>
-      <BaseNode
-        title="Output"
-        content={content}
-        handles={[
-          { type: "target", position: Position.Left, id: `${id}-outValue` },
-        ]}
-      ></BaseNode>
-    </>
+    <BaseNode
+      title="Output"
+      content={content}
+      handles={[
+        { type: "target", position: Position.Left, id: `${id}-outValue` },
+      ]}
+    ></BaseNode>
   );
 };

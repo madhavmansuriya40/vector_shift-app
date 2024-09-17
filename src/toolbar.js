@@ -33,44 +33,21 @@ export const PipelineToolbar = () => {
   }, []);
 
   return (
-    <div style={{ padding: "10px", background: "#0b0518" }}>
-      <div
-        style={{
-          textAlign: "right",
-          color: "white",
-          paddingRight: "20px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            gap: "20px",
-            alignItems: "center",
-            justifyContent: "end",
-          }}
-        >
+    <div className="toolbar">
+      <div className="server-status-container">
+        <div className="server-status">
           <div style={{ cursor: isOnline ? "default" : "pointer" }}>
             Server Status: {isOnline ? "Online" : "Connecting"}
           </div>
           <div
+            className="server-status-light"
             style={{
-              width: "15px",
-              height: "15px",
-              borderRadius: "50%",
               backgroundColor: isOnline ? "green" : "red",
             }}
           />
         </div>
       </div>
-      <div
-        style={{
-          justifyContent: "center",
-          marginTop: "20px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-        }}
-      >
+      <div className="toolbar-options">
         <DraggableNode type="customInput" label="Input" />
         <DraggableNode type="llm" label="LLM" />
         <DraggableNode type="text" label="Text" />
