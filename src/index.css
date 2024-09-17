@@ -55,7 +55,6 @@ code {
 
 /* Pipeline playground */
 .pipeline-playground {
-  width: 100vw;
   height: 80vh;
   background: var(--secondary-color);
 }
