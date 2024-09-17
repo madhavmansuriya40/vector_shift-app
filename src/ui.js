@@ -82,7 +82,7 @@ export const PipelineUI = () => {
         });
 
         const nodeID = getNodeID(type);
-        console.log("Node Id -> ", nodeID);
+
         const newNode = {
           id: nodeID,
           type,
@@ -90,7 +90,6 @@ export const PipelineUI = () => {
           data: getInitNodeData(nodeID, type),
         };
 
-        console.log("Just before adding node -> ", newNode);
         addNode(newNode);
       }
     },

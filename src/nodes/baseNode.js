@@ -21,15 +21,17 @@ export const BaseNode = ({ id, title, content, handles }) => {
         <strong>{title}</strong>
       </div>
       <div className="node-content">{content}</div>
-      {handles.map((handleConfig, idx) => (
-        <Handle
-          key={idx}
-          type={handleConfig.type}
-          position={handleConfig.position}
-          id={`${id}-${handleConfig.id}`}
-          style={handleConfig.style || {}}
-        />
-      ))}
+      {handles.map((handleConfig, idx) => {
+        return (
+          <Handle
+            key={idx}
+            type={handleConfig.type}
+            position={handleConfig.position}
+            id={`${handleConfig.id}`}
+            style={handleConfig.style || {}}
+          />
+        );
+      })}
     </div>
   );
 };

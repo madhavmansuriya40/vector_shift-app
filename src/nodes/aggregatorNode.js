@@ -14,16 +14,15 @@ export const AggregatorNode = ({ id, data }) => {
 
   return (
     <BaseNode
-      id={id}
       title="Aggregator"
       content={content}
       handles={[
         {
           type: "target",
           position: Position.Left,
-          id: id + "-prompt",
+          id: `${id}-aggri`,
         },
-        { type: "source", position: Position.Right, id: id + "-system" },
+        { type: "source", position: Position.Right, id: `${id}-agrisys` },
       ]}
     ></BaseNode>
   );

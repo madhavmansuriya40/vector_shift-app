@@ -53,6 +53,8 @@ label {
 input {
   font-size: 1.2vh;
   width: 8vw;
+  max-width: 15vw;
+  overflow: scroll;
   border: 0;
   color: var(--ternary-color);
   border-bottom: 1px solid var(--primary-color);

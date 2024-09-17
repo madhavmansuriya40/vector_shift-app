@@ -13,25 +13,30 @@ export const LLMNode = ({ id, data }) => {
   );
 
   return (
-    <BaseNode
-      id={id}
-      title="LLM"
-      content={content}
-      handles={[
-        {
-          type: "target",
-          position: Position.Left,
-          id: id + "-system",
-          style: { top: "33%" },
-        },
-        {
-          type: "target",
-          position: Position.Left,
-          id: id + "-prompt",
-          style: { top: "33%" },
-        },
-        { type: "source", position: Position.Right, id: id + "-response" },
-      ]}
-    ></BaseNode>
+    <>
+      <BaseNode
+        title="LLM"
+        content={content}
+        handles={[
+          {
+            type: "target",
+            position: Position.Left,
+            id: `${id}-llmSystem`,
+            style: { top: "33%" },
+          },
+          {
+            type: "target",
+            position: Position.Left,
+            id: `${id}-llmPrompt`,
+            style: { top: "66%" },
+          },
+          {
+            type: "source",
+            position: Position.Right,
+            id: `${id}-llmResponse`,
+          },
+        ]}
+      ></BaseNode>
+    </>
   );
 };

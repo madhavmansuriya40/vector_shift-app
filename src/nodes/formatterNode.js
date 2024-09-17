@@ -14,16 +14,15 @@ export const FormatterNode = ({ id, data }) => {
 
   return (
     <BaseNode
-      id={id}
       title="Formatter"
       content={content}
       handles={[
         {
           type: "target",
           position: Position.Left,
-          id: id + "-prompt",
+          id: `${id}-format`,
         },
-        { type: "source", position: Position.Right, id: id + "-system" },
+        { type: "source", position: Position.Right, id: `${id}-formatsystem` },
       ]}
     ></BaseNode>
   );

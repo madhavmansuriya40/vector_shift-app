@@ -41,7 +41,6 @@ export const InputNode = ({ id, data }) => {
   return (
     <>
       <BaseNode
-        id={id}
         title="Input"
         content={content} // content are kept on the same page as we need to handle the events
         handles={[{ type: "source", position: Position.Right, id: "value" }]}

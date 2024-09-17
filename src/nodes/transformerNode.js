@@ -14,16 +14,15 @@ export const TransformerNode = ({ id, data }) => {
 
   return (
     <BaseNode
-      id={id}
       title="Transformer"
       content={content}
       handles={[
         {
           type: "target",
           position: Position.Left,
-          id: id + "-prompt",
+          id: `${id}-trans-prompt`,
         },
-        { type: "source", position: Position.Right, id: id + "-system" },
+        { type: "source", position: Position.Right, id: `${id}-trans-system` },
       ]}
     ></BaseNode>
   );

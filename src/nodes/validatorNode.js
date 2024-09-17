@@ -14,16 +14,15 @@ export const ValidatorNode = ({ id, data }) => {
 
   return (
     <BaseNode
-      id={id}
       title="Validator"
       content={content}
       handles={[
         {
           type: "target",
           position: Position.Left,
-          id: id + "-prompt",
+          id: `${id}-validPrompt`,
         },
-        { type: "source", position: Position.Right, id: id + "-system" },
+        { type: "source", position: Position.Right, id: `${id}-validSystem` },
       ]}
     ></BaseNode>
   );

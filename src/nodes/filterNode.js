@@ -14,16 +14,15 @@ export const FilterNode = ({ id, data }) => {
 
   return (
     <BaseNode
-      id={id}
       title="Filter"
       content={content}
       handles={[
         {
           type: "target",
           position: Position.Left,
-          id: id + "-prompt",
+          id: `${id}-filtprompt`,
         },
-        { type: "source", position: Position.Right, id: id + "-system" },
+        { type: "source", position: Position.Right, id: `${id}-filtsystem` },
       ]}
     ></BaseNode>
   );

@@ -21,7 +21,6 @@ export const useStore = create((set, get) => ({
     return `${type}-${newIDs[type]}`;
   },
   addNode: (node) => {
-    console.log("inside add node --> ", node);
     set({
       nodes: [...get().nodes, node],
     });

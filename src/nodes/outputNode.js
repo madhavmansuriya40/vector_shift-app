@@ -41,11 +41,10 @@ export const OutputNode = ({ id, data }) => {
   return (
     <>
       <BaseNode
-        id={id + "-value"}
         title="Output"
         content={content}
         handles={[
-          { type: "target", position: Position.Left, id: id + "-value" },
+          { type: "target", position: Position.Left, id: `${id}-outValue` },
         ]}
       ></BaseNode>
     </>
