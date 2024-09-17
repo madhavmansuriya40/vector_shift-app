@@ -16,6 +16,9 @@ import { ValidatorNode } from "./nodes/validatorNode";
 import { FilterNode } from "./nodes/filterNode";
 import { FormatterNode } from "./nodes/formatterNode";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "reactflow/dist/style.css";
 
 const gridSize = 20;
@@ -121,6 +124,7 @@ export const PipelineUI = () => {
           <Background className="dot-grid" gap={gridSize} />
           <Controls />
           <MiniMap />
+          <ToastContainer />
         </ReactFlow>
       </div>
     </>

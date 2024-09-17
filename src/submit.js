@@ -1,10 +1,10 @@
 // submit.js
 import { useStore } from "./store";
+import { toast } from "react-toastify";
 
 export const SubmitButton = () => {
   const { nodes, edges } = useStore();
   const API_URL = process.env.REACT_APP_API_URL;
-  console.log("\n\n\n API_URL --> ", API_URL);
 
   const handleSubmit = async () => {
     try {
@@ -16,12 +16,20 @@ export const SubmitButton = () => {
         body: JSON.stringify({ nodes, edges }),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
       const result = await response.json();
-      console.log("Success:", result);
+
+      if (!response.ok) {
+        toast.error(result.detail);
+        throw new Error("Network response was not ok");
+      } else {
+        const message = `This is ${
+          result.is_dag ? "" : "NOT"
+        } a Direct Acyclic Graph(DAG) with ${result.num_edges} Edges and ${
+          result.num_nodes
+        } Nodes`;
+        if (result.is_dag) toast.success(message, { theme: "dark" });
+        else toast.error(message, { theme: "dark" });
+      }
     } catch (error) {
       console.error("Error:", error);
     }
